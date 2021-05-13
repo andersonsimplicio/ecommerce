@@ -22,6 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.index,name='index'),
     path('contato',views.contato,name='contato'),
-    path('produto',views.produto,name='produto'),
-    path('produtos',views.lista_produto,name='lista_produtos'),
+    path('catalogo/',include(('app.catalogo.urls','catalogo')))
 ]

@@ -1,10 +1,11 @@
 #config=utf-8
-from django.shortcuts import render
+from django.shortcuts import render,get_list_or_404
+from app.catalogo.models import Categoria,Produto
 
 def index(request):
     template='core/index.html'
     context = {
-        'title':'Amazon'
+        'title':'Amazon',
     }
     return render(request,template,context=context)
 
@@ -16,16 +17,4 @@ def contato(request):
     
     return render(request,template,context=context)
 
-def produto(request):
-    template='core/product.html'
-    context = {
-        'title':'Produto'
-    }
-    return render(request,template,context=context)
 
-def lista_produto(request):
-    template='core/product_list.html'
-    context = {
-        'title':'Lista de Produtos'
-    }
-    return render(request,template,context=context)

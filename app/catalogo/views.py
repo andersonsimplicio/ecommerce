@@ -2,11 +2,20 @@ from django.shortcuts import get_list_or_404, get_object_or_404, render
 from .models import Categoria, Produto
 
 
-def produto(request):
+def produto(request,slug=''):
     template='catalogo/product.html'
-    context = {
-        'title':'Produto'
-    }
+    try:
+        produto = get_object_or_404(Produto,slug=slug)
+        context = {
+            'title':'Produto',
+            'produto':produto
+        }
+    except Exception as e:
+        print(e)
+        context = {
+            'title':'Produto',
+            'produto':None
+        }
     return render(request,template,context=context)
 
 def lista_produto(request):

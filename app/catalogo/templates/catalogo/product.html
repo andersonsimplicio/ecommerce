@@ -4,7 +4,7 @@
 
 {% block container %}
 <div class="page-header">
-    <h1>Página do Produto</h1>
+    <h1>{{produto.nome}}</h1>
   </div>
   <div class="row">
     <div class="col-sm-4">
@@ -13,18 +13,7 @@
         </a>
     </div>
     <div class="col-sm-8">
-        <dl>
-            <dt>Lorem ipsum:</dt>
-          <dd>Lorem ipsum dolor sit amet</dd>
-          <dt>Lorem ipsum:</dt>
-          <dd>Lorem ipsum dolor sit amet</dd>
-          <dt>Lorem ipsum:</dt>
-          <dd>Lorem ipsum dolor sit amet</dd>
-          <dt>Lorem ipsum:</dt>
-          <dd>Lorem ipsum dolor sit amet</dd>
-          <dt>Lorem ipsum:</dt>
-          <dd>Lorem ipsum dolor sit amet</dd>
-        </dl>
+        {{produto.descricao | linebreaks}}
     </div>
   </div>
 {% endblock %}

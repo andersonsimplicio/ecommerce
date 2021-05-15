@@ -11,7 +11,7 @@
     {% for p in produtos %}
     <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
-            <a href="#">
+            <a href="{{p.get_absolute_url }}">
                 <img src="http://placehold.it/350x250" alt="" />
             </a>
             <div class="caption">

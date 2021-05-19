@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Entar | {{ block.super }} {% endblock %}
+
+{% block container %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="page-header">
+                    <h1>Entrar</h1>
+                </div>
+                <form class="form-horizontal " method="POST" >
+                  {% csrf_token %}
+                    <fieldset>
+                      {% for campo in form %}
+                        <div class="form-group">
+                          <label for="{{ campo.auto_id }}" class='col-md-3 control-label' >{{campo.label}}</label>
+                            <div class="col-md-9">
+                            {{campo}}
+                            {% for erro in campo.errors %}
+                              <span class="help-block">{{erro}}</span>
+                            {% endfor %}
+                            </div>
+                        </div>
+                       {% endfor %} 
+                        <div class="form-group">
+                          <div class="">
+                            <button type="submit" class="btn btn-primary">Enviar</button>
+                          </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+{% endblock %}

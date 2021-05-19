@@ -2,4 +2,5 @@ from django.apps import AppConfig
 
 
 class CoreConfig(AppConfig):
-    name = 'core'
+    name = 'app.core'
+    verbose_name ='Comum'

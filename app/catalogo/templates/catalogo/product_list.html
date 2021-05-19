@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load pagination %}
 {% block title %} {{title}} | {{block.super}} {% endblock %}
 
 {% block container %}
@@ -24,4 +24,8 @@
     {% endfor %}
     {% endif %}    
 </div>
+<div>
+    {% pagination request paginator page_obj %}
+</div>
+
 {% endblock %}

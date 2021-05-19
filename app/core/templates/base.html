@@ -40,7 +40,13 @@
 			</li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Minha Conta</a></li>
+            {% if user.is_authenticated %}
+              <li class="nav-item" style="color:rgb(247, 245, 245);margin-top:17px;">Olá, {{user | capfirst}}</li>
+              <li class="nav-item" style="color:rgb(247, 245, 245);margin-top:-2px;"><a href="{% url 'logout' %}">sair</a></li>
+            {% else %}
+            <li><a href="{% url 'login' %}">Minha Conta</a></li>
+            <li><a href="{% url 'account:registro' %}">Cadastro</a></li>
+            {% endif %}
           </ul>
         </div>
       </div>
@@ -63,5 +69,6 @@
 	</div>
 	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="{% static 'assets/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/estilo.js' %}"></script>
 </body>
 </html>

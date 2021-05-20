@@ -41,8 +41,8 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
             {% if user.is_authenticated %}
-              <li class="nav-item" style="color:rgb(247, 245, 245);margin-top:17px;">Olá, {{user | capfirst}}</li>
-              <li class="nav-item" style="color:rgb(247, 245, 245);margin-top:-2px;"><a href="{% url 'logout' %}">sair</a></li>
+              <li class="nav-item" style="color:rgb(247, 245, 245);"><a href="{% url 'account:index'%}">Olá, {{user | capfirst}}</a></li>
+              <li class="nav-item" style="color:rgb(247, 245, 245);"><a href="{% url 'logout' %}">sair</a></li>
             {% else %}
             <li><a href="{% url 'login' %}">Minha Conta</a></li>
             <li><a href="{% url 'account:registro' %}">Cadastro</a></li>

@@ -52,6 +52,13 @@
       </div>
     </div>
     <div class="container">
+    {% block messages %}
+      {% for message in messages %}
+       <div class="alert alet-{{message.tags}}">
+         {{messsage}}
+       </div>
+      {% endfor %}
+    {% endblock %}  
 		{% block container %}{% endblock %}
 		<footer>
 			<div class="row">

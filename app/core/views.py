@@ -1,7 +1,7 @@
 #config=utf-8
 from django import forms
 from django.contrib.auth.models import User
-
+from django.contrib import messages
 from django.shortcuts import render,get_list_or_404, resolve_url
 from app.catalogo.models import Categoria,Produto
 from .forms import ContactFrom

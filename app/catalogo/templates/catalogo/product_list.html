@@ -9,18 +9,7 @@
 <div class="row">
     {% if produtos %}
     {% for p in produtos %}
-    <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-            <a href="{{p.get_absolute_url }}">
-                <img src="http://placehold.it/350x250" alt="" />
-            </a>
-            <div class="caption">
-                <h3>{{p.nome}}</h3>
-                <p>{{p.descricao|linebreaks}}</p>
-                <p><a href="#" class="btn btn-success" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-            </div>
-        </div>
-    </div>
+        {% include 'catalogo/_produto.html' %}
     {% endfor %}
     {% endif %}    
 </div>

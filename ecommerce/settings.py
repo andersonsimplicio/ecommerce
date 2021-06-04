@@ -128,8 +128,3 @@ STATIC_URL = '/static/'
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL='index'
 AUTH_USER_MODEL='account.User'
-
-AUTHENTICATION_BACKENDS =(
-    'django.contrib.auth.backends.ModelBackend',
-    'app.account.backends.ModelsBackEnd'
-)
